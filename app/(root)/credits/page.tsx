@@ -1,4 +1,5 @@
-import { SignedIn, auth } from "@clerk/nextjs";
+import { SignedIn} from "@clerk/nextjs";
+import {auth } from "@clerk/nextjs/server";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 
@@ -61,12 +62,6 @@ const Credits = async () => {
                 </Button>
               ) : (
                 <SignedIn>
-                  <Checkout
-                    plan={plan.name}
-                    amount={plan.price}
-                    credits={plan.credits}
-                    buyerId={user._id}
-                  />
                 </SignedIn>
               )}
             </li>
